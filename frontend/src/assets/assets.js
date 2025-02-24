@@ -13,9 +13,9 @@ import pune from './pune.png'
 import kolkata from './kolkata.avif'
 import kochi from './kochi.avif'
 import daakumaharaaj from './daaku maharaaj.jpg'
-import deva from './deva.avif'
+import deva from './deva.jpg'
 import gamechanger from './game changer.jpg'
-import madhagajaraja from './madha gaja raja.avif'
+import madhagajaraja from './madha gaja raja.jpg'
 import pattudala from './pattudala.jpg'
 import premistava from './premistava.avif'
 import pushpa2 from './pushpa2.jpg'
@@ -43,7 +43,7 @@ import King_of_kings from './King_of_kings.jpg'
 import Lilo from './Lilo_&_Stitch.jpeg'
 import Wildwood from './Wildwood.jpg'
 import tangled from './tangled.jpg'
-import Luca from './Luca.webp'
+import Luca from './Luca.jpg'
 import frozen from './frozen.webp'
 import rating_stars from './rating_stars.jpeg'
 import plus from './plus.jpg'
@@ -60,11 +60,13 @@ import telegram from './telegram.jpg'
 import appstore from './appstore.webp'
 import googleplay from './googleplay.webp'
 import cross from './cross.png'
-
+import person from './person.png'
+import bag from './bag.png'
+import logout from './logout.png'
 
 
 export const assets={
-    logo,
+    logo,person,bag,logout,
     facebook,
     whattsapp,
     youtube,appstore,googleplay,
@@ -338,7 +340,7 @@ export const city_list=[
         },
         {
             _id:'22',
-            name:'Animal_Farm_film',
+            name:'a',
             image: Animal_Farm_film_poster,
             price:130,
             description:'Animal Farm is an upcoming animated fantasy comedy-drama film produced and directed by Andy Serkis, with a script written by Nicholas Stoller from a previous draft that was co-written by Rupert Wyatt and Serkis.',
