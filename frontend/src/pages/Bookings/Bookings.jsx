@@ -1,19 +1,21 @@
 import React, { useState, useContext } from 'react';
 import './Bookings.css';
-import { StoreContext } from '../../context/storeContext';
+import { StoreContext } from '../../context/StoreContext.jsx';
+import { useNavigate } from 'react-router-dom';
 
 const Bookings = () => {
+  const navigate = useNavigate();
   const { getTotalCartAmount } = useContext(StoreContext);
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [popcornCount, setPopcornCount] = useState(1);
-  const [selectedTime, setSelectedTime] = useState(""); // Show timing selection
+  const [selectedTime, setSelectedTime] = useState(""); 
   const seatPrice = 200;
   const popcornPrice = 135;
 
-  const seats = Array.from({ length: 1000 }, (_, i) => i + 1);
-  const showTimings = ["10:00 AM", "1:00 PM", "4:00 PM", "7:00 PM", "10:00 PM"]; // Available show timings
 
-  // Toggle seat selection
+  const seats = Array.from({ length: 1000 }, (_, i) => i + 1);
+  const showTimings = ["10:00 AM", "1:00 PM", "4:00 PM", "7:00 PM", "10:00 PM"]; 
+
   const toggleSeat = (seat) => {
     setSelectedSeats((prevSeats) =>
       prevSeats.includes(seat)
@@ -22,7 +24,6 @@ const Bookings = () => {
     );
   };
 
-  // Increase/Decrease Popcorn
   const increasePopcorn = (e) => {
     e.preventDefault();
     setPopcornCount((prev) => prev + 1);
@@ -33,16 +34,15 @@ const Bookings = () => {
     setPopcornCount((prev) => (prev > 0 ? prev - 1 : 0));
   };
 
-  // Handle show timing selection
   const handleTimeSelection = (time) => {
     setSelectedTime(time);
   };
 
-  // Calculate total
   const cartTotal = getTotalCartAmount();
   const seatsTotal = selectedSeats.length * seatPrice;
   const popcornTotal = popcornCount * popcornPrice;
   const grandTotal = cartTotal + seatsTotal + popcornTotal;
+  
 
   return (
     <form className="place-order">
@@ -64,7 +64,6 @@ const Bookings = () => {
         </div>
         <input type="text" placeholder="Phone" />
 
-        {/* Show Timing Selection */}
         <div className="show-timings">
           <p className="title">Select Show Timing</p>
           <div className="timing-options">
@@ -83,7 +82,6 @@ const Bookings = () => {
           </div>
         </div>
 
-        {/* Seat Selection Section */}
         <div className="seat-selection">
           <p className="title">Select Your Seats</p>
           <div className="seat-grid">
@@ -119,19 +117,17 @@ const Bookings = () => {
                 <span>{popcornCount}</span>
                 <button onClick={increasePopcorn}>+</button>
               </div>
-              {/* <p>Rs.{popcornTotal}/-</p> */}
             </div>
             <div className="cart-total-details">
               <p><b>Grand Total</b></p>
               <b>Rs.{grandTotal}/-</b>
             </div>
           </div>
-          <button disabled={selectedSeats.length === 0 || !selectedTime}>
-            Proceed to Payment
-          </button>
+          <button onClick={() => navigate('/payment')} disabled={selectedSeats.length === 0 || !selectedTime}>
+  Proceed to Payment
+</button>
         </div>
 
-        {/* Ticket Summary Section */}
         {selectedSeats.length > 0 && selectedTime && (
           <div className="ticket-summary">
             <h3>🎟️ Ticket Summary</h3>

@@ -9,6 +9,11 @@ import Bookings from './pages/Bookings/Bookings'
 import Footer from './components/Footer/Footer'
 import SigninPopup from './components/SigninPopup/SigninPopup'
 import Cart from './pages/cart/cart'
+// import { BrowserRouter as Router} from 'react-router-dom';
+// import Bookings from './pages/Bookings';
+// import PaymentSuccess from './pages/PaymentSuccess';
+import Payment from './pages/Payment';
+
 
 const App = () => {
 
@@ -25,6 +30,8 @@ const App = () => {
         <Route path='/language' element={<Language/>}></Route>
         <Route path='/bookings' element={<Bookings/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>
+        
+        <Route path="/payment" element={<Payment />}></Route> 
       </Routes>
     </div>
     <Footer/>

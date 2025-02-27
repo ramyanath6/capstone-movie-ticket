@@ -1,0 +1,48 @@
+  .payment-success h2 {
+    color: green;
+  }
+  
+  .payment-success button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .payment-success button:hover {
+    background-color: #45a049;
+  }
+
+    .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #d70a0a;
+    color: #f0eaea;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 18px;
+    animation: fadeIn 30ms ease-in-out;
+  }
+  
+    .payment-success {
+    text-align: center;
+    margin-top: 50px;
+    animation: fadeIn 1ms ease-in-out;
+    animation-delay: 30s; 
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

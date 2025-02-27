@@ -26,7 +26,7 @@ const StoreProvider=(props)=>{
             await fetchMovieList();
             if(localStorage.getItem('token')){
                 setToken(localStorage.getItem('token'))
-                await loadCartData(localStorage.getStorage.getItem('token'))
+                await loadCartData(localStorage.getItem('token'))
             }
         }
        loadData();
